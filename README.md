@@ -49,7 +49,12 @@ You can include a simple diagram or bullet list if helpful.
   - A: Small dataset of 20 songs with 12 genres ea genre having 1-2 songs. If the user's fav_genre has only one song, the recommender will always return the same result regardless of mood or energy.
   - A: Can reccomend the same songs over since no feature to mark if a song has already been seen.
 
-![Demo](demo.png)
+![Demo](/assets/demo.png)
+
+Diverse Profiles
+![User 1](/assets/user_prefs_1.png)
+![User 2](/assets/user_prefs_2.png)
+![User 3](/assets/user_prefs_3.png)
 ---
 
 ## Getting Started
@@ -109,6 +114,7 @@ Examples:
 
 You will go deeper on this in your model card.
 
+- A: It only works on a tiny catalog
 ---
 
 ## Reflection
@@ -120,7 +126,19 @@ Read and complete `model_card.md`:
 Write 1 to 2 paragraphs here about what you learned:
 
 - about how recommenders turn data into predictions
+    - What was your biggest learning moment during this project?
+      - A: I learned the different types of reccomendations ie context, content, and collaborative. The one built today falls under content
+
+    - How did using AI tools help you, and when did you need to double-check them?
+      - A: Claude was helpful in creating a mermaid.js for the data flow of the reccomender
+      - A: I needed to double-check the ai when it camp to writing function logic. I needed to ensure ea line was purposeful and not over written beyond MVP requirments
+
+    - What surprised you about how simple algorithms can still "feel" like recommendations?
+      - There is no ml, training data, or embeddings involved to yeild fairly accuracte and such specific reccomendations 
+
 - about where bias or unfairness could show up in systems like this
+  - What would you try next if you extended this project?
+    - A: Address subgenre edge case, and use more song.data than genre, mood, and energy
 
 
 ---
