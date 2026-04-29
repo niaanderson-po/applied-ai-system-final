@@ -56,7 +56,15 @@ Then edit `.env` to include your Gemini API key:
 
 ### How I used AI during development
 
+I used AI in the design portion of the project. With the help of Claude I was able to ideate which AI Feature would be the easiest to implement into my current codebase out of the multiple options: Retrieval-Augmented Generation (RAG), Agentic Workflow, Fine-Tuned or Specialized Model, and Reliability or Testing System. I went with Retrieval-Augmented Generation (RAG).
+
 ### Flawed and Helpful AI suggestion
+
+Previously Claude suggested using the module chat for gemini interaction but that caused the error:
+
+[AI explanation unavailable: module 'google.generativeai' has no attribute 'chat']
+
+So instead I switched from genai.chat.create() to model.generate_content(prompt)
 
 ### System limitations and future improvements
 
