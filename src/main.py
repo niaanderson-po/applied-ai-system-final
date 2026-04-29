@@ -9,17 +9,17 @@ You will implement the functions in recommender.py:
 - recommend_songs
 """
 
-from recommender import load_songs, recommend_songs
+from .recommender import load_songs, recommend_songs
+from .rag import generate_playlist_guidence
 
 
 def main() -> None:
-    songs = load_songs("data/songs.csv") 
+    songs = load_songs("data/songs.csv")
     print(f"\nLoaded songs: {len(songs)}\n")
     # Starter example profile
     user_prefs_1 = {"genre": "pop", "mood": "happy", "energy": 0.8}
     user_prefs_2 = {"genre": "rock", "mood": "intense", "energy": 0.9}
     user_prefs_3 = {"genre": "lofi", "mood": "chill", "energy": 0.4}
-    
 
     all_prefs = [user_prefs_1, user_prefs_2, user_prefs_3]
 
@@ -31,6 +31,11 @@ def main() -> None:
             print(f"{song['title']} - Score: {score:.2f}")
             print(f"Because: {explanation}")
             print()
+
+        print("AI playlist guidence:")
+        ai_text = generate_playlist_guidence(prefs, recommendations)
+        print(ai_text)
+        print()
 
 
 if __name__ == "__main__":

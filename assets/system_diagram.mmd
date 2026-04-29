@@ -1,0 +1,27 @@
+%%RAG System Diagram
+
+flowchart TD
+    A[User input] --> B[Recommender Core]
+    C[Song Catalog] --> B
+    B --> D[Top recommendations]
+    D --> E[Prompt Builder]
+    F[Knowledge Base] --> G[Retriever]
+    G --> E
+    E --> H[LLM / AI Model]
+    H --> I[AI Explanation & Playlist Advice]
+    I --> J[User sees recommendations + explanation]
+
+    subgraph Validation
+      K[Automated tests]
+      L[Human review]
+    end
+
+    B --> K
+    H --> K
+    J --> L
+    J --> K
+    style Validation fill:#f9f,stroke:#333,stroke-width:1px
+    style A fill:#bbf,stroke:#333,stroke-width:1px
+    style C fill:#bbf,stroke:#333,stroke-width:1px
+    style F fill:#bbf,stroke:#333,stroke-width:1px
+    style J fill:#bfb,stroke:#333,stroke-width:1px
